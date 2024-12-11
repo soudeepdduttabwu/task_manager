@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>Add Task</h2>
+<form method="POST" action="/tasks/add">
+    <div class="mb-3">
+        <label for="taskName" class="form-label">Task Name</label>
+        <input type="text" class="form-control" id="taskName" name="name" required>
+    </div>
+    <div class="mb-3">
+        <label for="taskDescription" class="form-label">Task Description</label>
+        <textarea class="form-control" id="taskDescription" name="description" rows="3" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label for="taskType" class="form-label">Task Type</label>
+        <select multiple class="form-select" id="taskType" name="task_type[]" required>
+            <option value="a-task">A-Task</option>
+            <option value="b-task">B-Task</option>
+            <option value="c-task">C-Task</option>
+            <option value="d-task">D-Task</option>
+            <option value="e-task">E-Task</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="startDate" class="form-label">Start Date</label>
+        <input type="date" class="form-control" id="startDate" name="start_date" required>
+    </div>
+    <div class="mb-3">
+        <label for="endDate" class="form-label">End Date</label>
+        <input type="date" class="form-control" id="endDate" name="end_date" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
